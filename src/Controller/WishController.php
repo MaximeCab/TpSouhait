@@ -21,11 +21,15 @@ public function list(EntityManagerInterface $em){
     ]);
 }
     #[Route(path: 'detail/{id}' , name: 'detail',requirements: ['id'=>'\d+'],methods: ['GET'])]
-    public function detail(EntityManagerInterface $em, $id){
+    public function detail(wish $wish){
         return $this->render('wish/detail.html.twig',[
-            'wish' => $em->getRepository(Wish::class)->find($id)
+            'wish' => $wish
         ]);
     }
+
+
+
+
     public function create(EntityManagerInterface $em){
      //1 ere facon
      /*$wish = new wish() ;

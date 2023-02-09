@@ -11,7 +11,7 @@ class Wish
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column (name: 'id', type: 'integer', options: ['unsigned' => true])]
     private ?int $id = null;
 
     #[ORM\Column(length: 250)]
