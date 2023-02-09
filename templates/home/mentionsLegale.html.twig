@@ -3,9 +3,58 @@
     Mentions Legal !
 {% endblock %}
 
-{% block main %}
-    Praesent lacus nisi, viverra sed lorem a, lobortis convallis tortor. Donec justo leo, sollicitudin a dui eget, viverra congue tortor. Morbi accumsan lacus in facilisis tempus. Phasellus a rutrum sem. Nullam fermentum quis turpis in porttitor. Nam egestas mattis tellus quis porttitor. Nulla id mauris non mi aliquam volutpat quis vel justo. In auctor quam in congue hendrerit. Integer ante ligula, malesuada nec dignissim vitae, porta eget tellus. Donec lorem felis, pretium at velit eget, vehicula tempus leo. Nulla facilisi. Mauris et cursus nunc, vel dictum massa. Nam bibendum vel odio vitae maximus. Etiam maximus, risus ac finibus mattis, lorem ligula scelerisque turpis, sed porta orci odio ac eros. Morbi at neque blandit arcu semper maximus vitae vitae magna.
+{% block Css %}{{ parent ()}}
+    <link rel="stylesheet" href="{{ asset('css/mentionsLegale.css') }}">
 {% endblock %}
+
+{% block main %}
+    Mentions légales
+
+    1. Présentation du site
+
+    Ce site est édité par [nom de la société], immatriculée au [numéro d'immatriculation de la société], dont le siège social est situé à [adresse du siège social].
+
+    2. Directeur de la publication
+
+    Le directeur de la publication du site est [nom du directeur de la publication].
+
+    3. Hébergement
+
+    Le site est hébergé par [nom de l'hébergeur], dont le siège social est situé à [adresse de l'hébergeur].
+
+    4. Propriété intellectuelle
+
+    Le contenu du site, y compris, sans s'y limiter, les textes, photographies, logos, icônes, images, vidéos et bases de données, est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.
+
+    Toute reproduction, représentation, modification, publication, adaptation, totale ou partielle des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de [nom de la société].
+
+    5. Responsabilité
+
+    [Nom de la société] ne pourra être tenue responsable des dommages directs ou indirects causés au matériel de l'utilisateur, lors de l'accès au site, et résultant soit de l'utilisation d'un matériel ne répondant pas aux spécifications indiquées au point 4, soit de l'apparition d'un bug ou d'une incompatibilité.
+
+    [Nom de la société] ne pourra également être tenue responsable des dommages indirects (tels par exemple qu'une perte de marché ou perte d'une chance) consécutifs à l'utilisation du site.
+
+    6. Liens hypertextes
+
+    Des liens hypertextes peuvent renvoyer vers d'autres sites, qui n'ont pas été développés par [nom de la société]. [Nom de la société] ne peut en aucun cas être tenue responsable de la mise à disposition de ces sites et sources externes, ni ne peut supporter aucune garantie quant à leur contenu.
+
+    7. Collecte et utilisation des données personnelles
+
+    Le site est susceptible de collecter des informations personnelles telles que le nom, l'adresse électronique, etc. Les informations collectées sont destinées à [nom de la société] et sont nécessaires pour la gestion de la relation commerciale.
+
+    8. Loi applicable et juridiction compétente
+
+    Les présentes mentions légales sont soumisesà la loi française. En cas de litige, les tribunaux français seront seuls compétents.
+
+    Modification des mentions légales
+    [Nom de la société] se réserve le droit de modifier les présentes mentions légales à tout moment. Les utilisateurs du site sont donc invités à les consulter régulièrement.
+
+    Ce site a été mis à jour pour la dernière fois le [date de la dernière mise à jour].```
+
+    Il est important de noter que les mentions légales peuvent varier en fonction des lois et réglementations en vigueur dans le pays dans lequel le site est hébergé et peuvent également varier en fonction des caractéristiques et des activités du site lui-même. Il est donc fortement recommandé de consulter un avocat pour une rédaction personnalisée de vos mentions légales.
+
+{% endblock %}
+
 
 {% block js %}
     <script src="{{ asset('js/alert.js') }}" ></script>
