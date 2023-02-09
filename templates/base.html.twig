@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Acceuil!{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico')}}"/>
+        {% block Css %}<link rel="stylesheet" href="{{ asset('css/style.css')}}">{% endblock %}
+
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Syloti+Nagri&display=swap" rel="stylesheet">    </head>
+    <body>
+    <header>
+        <div class="logoDiv">
+        <img src="{{ asset('img/logo.svg')}}  " class="image"/>
+        <h1 class="titre">Tp sur les souhaits </h1>
+        </div>
+
+        <nav class="navbar">
+               <a href="{{ path('home') }}">Acceuil </a>
+                <a href="{{ path('mentions-legale') }}">Mentions-Legale </a>
+                <a href="{{ path('contact') }}">Contact </a>
+                <a href="{{ path('about-us') }}">About-us</a>
+                <a href="{{ path('wish_list') }}">Liste</a>
+        </nav>
+    </header>
+
+    <main>
+
+        {% block main %}
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque magna lacus, id tincidunt tortor dignissim eu. Ut pellentesque, sapien a consequat tristique, mauris nisl venenatis urna, sit amet efficitur purus ex blandit mauris. Nam porttitor pellentesque arcu eget egestas. Morbi in pharetra ex. Praesent varius pellentesque accumsan. Vivamus eget dolor orci. Nam quis arcu quis tellus placerat varius. Duis nibh sapien, accumsan id justo at, gravida mattis dui. Phasellus convallis tellus ipsum. Cras pulvinar nibh sed nibh facilisis, et vestibulum nisi dignissim. Proin gravida elit sed nulla aliquet, sed efficitur diam aliquet.
+
+                Ut iaculis sed leo in tristique. Pellentesque sollicitudin, dolor eget efficitur aliquet, metus purus suscipit ex, in iaculis nisl risus in enim. Proin hendrerit lobortis ultricies. Aliquam sagittis libero nec nulla blandit mattis. Morbi finibus venenatis ex, at tincidunt urna consectetur et. Fusce ut quam ex. Aliquam turpis ligula, iaculis et molestie id, laoreet in tortor. Vivamus sed purus semper, blandit velit eu, consectetur arcu. Pellentesque erat velit, ultrices eget tempor varius, tincidunt quis velit. Cras porttitor nisi vel enim dictum mollis. Sed porta consectetur velit nec aliquet. Fusce sit amet augue eget mauris lobortis malesuada. Integer vel ante in libero molestie iaculis vitae nec ligula. Vivamus ullamcorper nisl nec nibh convallis, id hendrerit lectus malesuada. Sed luctus, diam nec ullamcorper mattis, elit erat ultricies arcu, in interdum nunc nisl eu odio. Mauris nec libero eu nibh varius egestas a at lectus.</p>
+
+        {% endblock %}
+    </main>
+
+    <footer>
+    <h4>&copy;Bucket-List {{ "now"|date('Y') }} </h4>
+    </footer>
+    </body>
+
+    {% block js %}
+        <script
+                src="https://code.jquery.com/jquery-3.6.3.js"
+                integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+                crossorigin="anonymous"
+        >
+        </script>
+    {% endblock %}
+</html>

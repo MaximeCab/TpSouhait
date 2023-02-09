@@ -1,0 +1,49 @@
+header {
+    background-color: #2196F3;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoDiv {
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    height: 50px;
+    margin-right: 20px;
+}
+
+.titre {
+    font-family: 'Noto Sans Syloti Nagri', sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+nav.navbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+nav.navbar a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: white;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    padding: 50px;
+    text-align: justify;
+}
+
+footer {
+    background-color: #2196F3;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
