@@ -29,6 +29,24 @@ class Wish
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $dateCreated = null;
 
+    /**
+     * @param int|null $id
+     * @param string|null $title
+     * @param string|null $description
+     * @param string|null $author
+     * @param bool|null $isPublished
+     * @param \DateTimeInterface|null $dateCreated
+     */
+    public function __construct(?string $title, ?string $description, ?string $author, ?bool $isPublished, ?\DateTimeInterface $dateCreated)
+    {
+        $this->title = $title;
+        $this->description = $description;
+        $this->author = $author;
+        $this->isPublished = $isPublished;
+        $this->dateCreated = $dateCreated;
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;

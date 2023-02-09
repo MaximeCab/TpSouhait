@@ -14,6 +14,7 @@ class WishController extends AbstractController
  #[Route(path: 'list' , name: 'list',methods: ['GET'])]
 public function list(EntityManagerInterface $em){
      $list = $em->getRepository(Wish::class)->findAll();
+     // création du souhait //
      /*$this->create($em);*/
     return $this->render('wish/list.html.twig', [
         'list' => $list
@@ -26,12 +27,20 @@ public function list(EntityManagerInterface $em){
         ]);
     }
     public function create(EntityManagerInterface $em){
-     $wish = new wish() ;
+     //1 ere facon
+     /*$wish = new wish() ;
      $wish->setTitle("coder une appli");
      $wish->setDescription("Reussir à coder une appli seul qui me plait " );
      $wish->setAuthor('Maxime');
      $wish->setIsPublished('true');
-     $wish->setDateCreated(new DateTime());
+     $wish->setDateCreated(new DateTime());*/
+     //2 eme facon
+    $wish = new Wish (
+        'faire du snow',
+        'faire du snwobard en roadtrip',
+        'Maxime',
+        'true',
+        new DateTime());
 
      $em->persist($wish);
      $em->flush();
