@@ -29,5 +29,10 @@ class HomeController extends AbstractController
     {
       return $this->render('home/aboutUs.html.twig')  ;
     }
+    #[Route(path: 'ajout-souvenir' , name: 'ajout-souvenir',methods: ['GET'])]
+    public function AjoutSouvenir()
+    {
+        return $this->render('home/ajoutSouvenir.html.twig')  ;
+    }
 
 }

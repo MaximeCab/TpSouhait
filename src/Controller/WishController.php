@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Wish;
+use App\Form\WishType;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
+use http\Env\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -26,29 +28,13 @@ public function list(EntityManagerInterface $em){
             'wish' => $wish
         ]);
     }
-
-
-
-
-    public function create(EntityManagerInterface $em){
-     //1 ere facon
-     /*$wish = new wish() ;
-     $wish->setTitle("coder une appli");
-     $wish->setDescription("Reussir à coder une appli seul qui me plait " );
-     $wish->setAuthor('Maxime');
-     $wish->setIsPublished('true');
-     $wish->setDateCreated(new DateTime());*/
-     //2 eme facon
-    $wish = new Wish (
-        'faire du snow',
-        'faire du snwobard en roadtrip',
-        'Maxime',
-        'true',
-        new DateTime());
-
-     $em->persist($wish);
-     $em->flush();
-     unset($em);
-     return true;
+    #[Route(path: 'ajout-souvenir',name: 'ajout-souvenir',methods: ['GET','POST'])]
+    public function create () : \Symfony\Component\HttpFoundation\Response
+    {
+     $wish = new Wish();
+     $wishForm = $this->createForm(WishType::class,$wish);
+     return $this->render('home/ajoutSouvenir.html.twig', [
+         "wishForm" => $wishForm->createView()
+     ]);
     }
 }

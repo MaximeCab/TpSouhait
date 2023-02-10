@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\WishRepository;
+use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -37,13 +38,11 @@ class Wish
      * @param bool|null $isPublished
      * @param \DateTimeInterface|null $dateCreated
      */
-    public function __construct(?string $title, ?string $description, ?string $author, ?bool $isPublished, ?\DateTimeInterface $dateCreated)
+    public function __construct()
     {
-        $this->title = $title;
-        $this->description = $description;
-        $this->author = $author;
-        $this->isPublished = $isPublished;
-        $this->dateCreated = $dateCreated;
+
+        $this->isPublished = true;
+        $this->dateCreated = new DateTime();
     }
 
 
