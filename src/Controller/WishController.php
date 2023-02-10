@@ -8,6 +8,7 @@ use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use http\Env\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route(path: 'wish/' , name: 'wish_')]
@@ -29,10 +30,14 @@ public function list(EntityManagerInterface $em){
         ]);
     }
     #[Route(path: 'ajout-souvenir',name: 'ajout-souvenir',methods: ['GET','POST'])]
-    public function create () : \Symfony\Component\HttpFoundation\Response
+    public function create (Request $request , EntityManagerInterface $entityManager) : Response
     {
      $wish = new Wish();
      $wishForm = $this->createForm(WishType::class,$wish);
+     $wishForm->handleRequest($request);
+
+     if ()
+
      return $this->render('home/ajoutSouvenir.html.twig', [
          "wishForm" => $wishForm->createView()
      ]);
